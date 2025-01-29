@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_head %} {{ month|title }} Plan {% endblock %}
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'challenges/challenges.css' %}">
+{% endblock %}
+{% block content %}
+{% include "challenges/includes/header.html" with page_det="Monthly plan" %}
+    <h3>Challenge for {{ month|title }}</h3>
+    {% if text %}
+        <h2>{{ text }}</h2>
+    {% else %}
+        <h2>No Challenge for this month!</h2>
+    {% endif %}
+{% endblock %}   
