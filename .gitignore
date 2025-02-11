@@ -1,1 +1,6 @@
 env/
+monthly_challenges/Log/*.txt
+.env
+Dockerfile
+*.pyc
+__pycache__/

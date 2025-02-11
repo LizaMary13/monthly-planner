@@ -11,7 +11,9 @@
 {% include "challenges/includes/header.html" with page_det="Home" %}
     <ul>
         {% for month in months%}
-        <li><a href="{% url 'monthly-plan' month=month %}">{{month|title}}</a></li>
+        <li><a href="{% url 'monthly-plan' month=month|lower %}">{{month|title}}</a></li>
         {% endfor %}
     </ul>
+    <h3> TODAY IN HISTORY!!! </h3>
+    <h3>{{ facts }}</h3>
 {% endblock %}

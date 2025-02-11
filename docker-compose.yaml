@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  postgres_db:
+    image: 'postgres:16-alpine'
+    volumes:
+      - data:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    container_name: postgres_db
+  my_app:
+    build: './'
+    volumes:
+      - logs:/app/monthly_challenges/Log
+      - ./:/app
+    env_file:
+      - ./.env
+    ports:
+      - '8000:8000'
+    depends_on:
+      - postgres_db
+    container_name: my_app
+
+volumes:
+  data:
+    external: True
+  logs:
+    external: True

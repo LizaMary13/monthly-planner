@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title_head %} Changes saved {% endblock %}
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'challenges/challenges.css' %}">
+{% endblock %}
+{% block content %}
+{% include "challenges/includes/header.html" with page_det="Home" %}
+<h2> Your change(s) have been processed successfully! </h2>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
