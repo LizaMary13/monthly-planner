@@ -34,8 +34,8 @@ class ChallengesView(APIView):
                         break
             quote, author = None, None
             quote_resp = requests.get(QUOTES_API).json()
-            quote = quote_resp.get('random').get('text')
-            author = quote_resp.get('random').get('author').get('name')
+            quote = quote_resp.get('text', None)
+            author = quote_resp.get('author', {}).get('name', None)
             challenges = Plan.objects.filter(month=month_chosen).order_by('day')
             return render(request, 'challenges/challenge.html', {'challenges': challenges, 'month': month, \
                 "author": author, "quote": quote})
