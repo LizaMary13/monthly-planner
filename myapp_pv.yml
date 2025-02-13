@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myapp-pv
+  namespace: myapp-2-ns
+  labels:
+    app: myapp-2
+    name: myapp-pv
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: standard
+  hostPath:
+    path: /logs
+    type: DirectoryOrCreate
+
+
+
+
+
+
+
+

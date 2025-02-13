@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: pg-dep
+  labels:
+    app: myapp-2
+    name: pg-dep
+  namespace: myapp-2-ns
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: myapp-2
+      name: postgres-pod
+  template:
+    metadata: 
+      name: postgres-pod
+      namespace: myapp-2-ns
+      labels:
+        app: myapp-2
+        name: postgres-pod
+    spec:
+      containers:
+        - name: postgres
+          image: 'postgres:16-alpine'
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - secretRef:
+                name: postgres-secret
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+           claimName: postgres-pvc
+              
+                
