@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: myapp-v2
-          image: lmary98/myapp:v3
+          image: lmary98/myapp:v4
           ports:
             - containerPort: 8000
           envFrom:

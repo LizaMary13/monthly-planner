@@ -9,7 +9,7 @@ services:
     container_name: postgres_db
   my_app:
     # build: './'
-    image: 'lmary98/myapp:v2'
+    image: 'lmary98/myapp:v4'
     volumes:
       - logs:/app/monthly_challenges/Log
       - ./:/app
