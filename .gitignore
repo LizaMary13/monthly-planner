@@ -1,5 +1,7 @@
 env/
-**/__pycache__/
-**/*.pyc
-Log/
+monthly_challenges/Log/*.txt
 .env
+Dockerfile
+**/*.pyc
+**/__pycache__/
+Log/
