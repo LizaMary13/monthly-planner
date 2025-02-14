@@ -1,0 +1,80 @@
+li {
+    color: violet;
+}
+
+h2 {
+    color: pink;
+    text-align: center;
+}
+
+h3 {
+    color:rgb(86, 16, 45);
+    text-align: center;
+}
+
+h4 {
+    color: rgb(86, 16, 45);
+}
+
+ul {
+    list-style: none;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 20rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 25rem;
+    background-color: rgb(205, 137, 147);
+}
+
+li {
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+    border-bottom: 1px solid gray;
+    padding-bottom: 0.5rem;
+}
+
+li:last-of-type,
+li:nth-of-type(6){
+    border-bottom: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+li a:hover,
+li a:active {
+    color: rgb(95, 33, 33);
+    background-color: rgb(193, 133, 174);
+}
+
+header{
+    background-color: rgb(144, 42, 59);
+}
+
+header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: pink;
+}
+
+nav a:hover,
+nav a:active {
+    color: rgb(95, 33, 33);
+    background-color: rgb(193, 133, 174);
+    border-radius: 12px;
+}

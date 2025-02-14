@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+
+html {
+    font-family: "Delius Swash Caps", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(179, 60, 80);
+}
+      
