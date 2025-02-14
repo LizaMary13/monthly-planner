@@ -1,6 +1,6 @@
 env/
-monthly_challenges/Log/*.txt
+**/__pycache__/
+**/*.pyc
+Log/
 .env
 Dockerfile
-*.pyc
-__pycache__/
