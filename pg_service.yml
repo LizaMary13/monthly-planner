@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-db
+  namespace: myapp-2-ns
+  labels:
+    name: postgres-db
+    app: myapp-2
+spec:
+  selector:
+    name: postgres-pod
+    app: myapp-2
+  ports:
+    - port: 5432
+      targetPort: 5432

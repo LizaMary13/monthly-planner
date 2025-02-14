@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-dep
+  namespace: myapp-2-ns
+  labels:
+    app: myapp-2
+    name: myapp-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp-2
+      name: myapp-pod
+  template:
+    metadata:
+      name: myapp-pod
+      namespace: myapp-2-ns
+      labels: 
+        app: myapp-2
+        name: myapp-pod
+    spec:
+      containers:
+        - name: myapp-v2
+          image: lmary98/myapp:v4
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: postgres-secret
+          volumeMounts:
+            - name: myapp-logs
+              mountPath: /app/monthly_challenges/Log
+      volumes:
+        - name: myapp-logs
+          persistentVolumeClaim:
+            claimName: myapp-pvc

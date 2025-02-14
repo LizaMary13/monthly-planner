@@ -3,3 +3,5 @@ monthly_challenges/Log/*.txt
 .git
 Dockerfile
 .env
+*.yml
+*.yaml

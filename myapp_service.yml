@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+  namespace: myapp-2-ns
+  labels:
+    name: myapp-service
+    app: myapp-2
+spec:
+  selector:
+    app: myapp-2
+    name: myapp-pod
+  type: NodePort
+  ports:
+    - nodePort: 30007
+      port: 8000
+      targetPort: 8000
